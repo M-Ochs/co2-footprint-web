@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBalance Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="relative">
+        <div class="top-section flex justify-between items-center px-4 py-6">
+            <h1 class="text-white text-4xl font-bold absolute inset-x-0 top-0 text-center z-10">CO₂-Footprint</h1>
+            
+            <div class="language-btn-container flex gap-4">
+                <button id="language-switcher-de" class="language-btn">DE</button>
+                <button id="language-switcher-ar" class="language-btn">AR</button>
+            </div>
+        </div>
+        <div class="bottom-section flex justify-between items-center px-4 py-6">
+            <nav class="menu">
+                <ul class="flex space-x-5">
+                    <li><a href="index.html" class="text-white font-bold">Home</a></li>
+                    <li><a href="contact.html" class="text-white font-bold">Kontakt</a></li>
+                </ul>
+            </nav>
+            <img 
+                src="../assets/EcoBalance_Foundation_Desktop_Logo.png" 
+                alt="EcoBalance Foundation Logo"
+                class="logo"
+            >
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="layout flex">
+        <nav class="local-menu w-1/5">
+            <ul>
+                <li><a href="data.html" class="local-menu-item">Daten</a></li>
+                <li><a href="statistics.html" class="local-menu-item">Statistiken</a></li>
+                <li><a href="calculator.html" class="local-menu-item">Rechner</a></li>
+            </ul>
+        </nav>
+
+        <!-- Kontaktformular -->
+        <section class="content w-4/5">
+            <h1 class="welcome-title">Kontakt</h1>
+            <p>Du kannst uns über das folgende Formular erreichen:</p>
+            <form id="contact-form" action="mailto:your-email@example.com" method="POST" enctype="text/plain" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-lg">Name:</label>
+                    <input type="text" id="name" name="name" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-lg">E-Mail:</label>
+                    <input type="email" id="email" name="email" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="message" class="block text-lg">Nachricht:</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Absenden</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-6">
+        <p>©2024 EcoBalance Foundation CO₂-Footprint</p>
+        <ul>
+            <li><a href="privacy.html">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

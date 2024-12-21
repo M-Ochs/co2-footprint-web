@@ -1,0 +1,154 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: #92be75; 
+}
+
+.top-section h1 {
+    font-size: 2.5rem; 
+    color: white;
+    margin-top: 20px;   
+}
+
+/* Buttons für Sprachwechsel*/
+.language-btn-container {
+    z-index: 10;
+    margin-top: 70px;  
+    margin-right: 10px; 
+}
+
+.language-btn {
+    background-color: #fff;
+    color: #4CAF50;
+    font-weight: bold;
+    border: 1px solid #4CAF50;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;   
+}
+
+.language-btn.active {
+    background-color: white;
+    color: #333; /* Aktiver Button ist grau */
+}
+
+.language-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.bottom-section {
+    position: absolute;
+    bottom: 10px; 
+    width: 100%;
+}
+
+.menu ul {   /* Globale Navigation */
+    gap: 20px;   
+}
+
+.menu a {
+    color: white;
+    font-weight: bold;
+}
+
+.logo {
+    height: 80px;
+}
+
+.local-menu-item {
+    font-weight: bold;
+    color: #199619;    
+}
+
+.local-menu-item:hover {
+    color: #004d00; /* Dunkleres Grün bei Hover */
+}
+
+.welcome-title {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    margin-bottom: 20px;
+}
+
+.layout {
+    gap: 20px;
+    padding: 20px;
+}
+
+footer {
+    background-color: #92be75;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Anpassungen für die mobile Version */
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 70px;
+        position: relative;
+    }
+
+    .language-btn-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; 
+        gap: 10px; 
+    }
+
+    .logo {
+        height: 60px;
+        margin: 5px 0;
+    }
+
+    .bottom-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 40px; 
+        padding: 0 20px; 
+    }
+
+    .menu ul {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        margin: 10px;
+        width: 100%;
+    }
+
+    .menu li {
+        padding: 10px 20px;
+    }
+
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+

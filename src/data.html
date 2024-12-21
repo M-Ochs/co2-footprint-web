@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBalance Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+/* CSS-Layout für die Tabelle */
+
+        /* Filtercontainer */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .filter-container label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .filter-container input {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Tabellencontainer */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            table-layout: auto;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            
+        }
+
+        table th {
+            background-color: #92be75;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            text-align: left;  
+        }
+        /* Pfeile in Tabelle einbinden für die Sortierfunktion */
+        table th::after {
+            content: " ▼";
+            font-size: 0.8em;
+            position: absolute;
+            opacity: 0.6;
+            display: block;
+            margin-top: -5px;
+            text-align: right;
+        }
+
+        table th.sorted-asc::after {
+            content: " ▲";
+        }
+
+        table th.sorted-desc::after {
+            content: " ▼";
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="relative">
+        
+        <div class="top-section flex justify-between items-center px-4 py-6">
+            <h1 class="text-white text-4xl font-bold absolute inset-x-0 top-0 text-center z-10">CO₂-Footprint</h1>
+            
+            <div class="language-btn-container flex gap-4">
+                <button id="language-switcher-de" class="language-btn">DE</button>
+                <button id="language-switcher-ar" class="language-btn">AR</button>
+            </div>
+        </div>
+        
+        
+        <div class="bottom-section flex justify-between items-center px-4 py-6">
+            
+            <nav class="menu">
+                <ul class="flex space-x-5">
+                    <li><a href="index.html" class="text-white font-bold">Home</a></li>
+                    <li><a href="contact.html" class="text-white font-bold">Kontakt</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Logo -->
+            <img 
+                src="../assets/EcoBalance_Foundation_Desktop_Logo.png" 
+                alt="EcoBalance Foundation Logo"
+                class="logo"
+            >
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="layout px-4">
+        <!-- Filteroptionen -->
+        <div class="filter-container">
+            <div class="filter-item">
+                <label for="country-filter">Land filtern:</label>
+                <input type="text" id="country-filter" placeholder="Land suchen..." />
+            </div>
+            <div class="filter-item">
+                <label for="company-filter">Unternehmen filtern:</label>
+                <input type="text" id="company-filter" placeholder="Unternehmen suchen..." />
+            </div>
+        </div>
+
+        <!-- Tabelle für CO₂-Emissionen -->
+        <div class="table-container">
+            <table id="co2-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Land</th>
+                        <th onclick="sortTable(1)">Unternehmen</th>
+                        <th onclick="sortTable(2)">CO₂-Emissionen (t)</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Die Tabellenzeilen werden hier von JavaScript dynamisch eingefügt -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>©2024 EcoBalance Foundation CO₂-Footprint</p>
+        <ul>
+            <li><a href="privacy.html">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
